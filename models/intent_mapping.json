@@ -1,0 +1,15 @@
+{
+  "aceptacion_calificacion": 0,
+  "calificacion_minima_aprobar": 1,
+  "consejos_exito_propedéutico": 2,
+  "consulta_calificacion_final": 3,
+  "despedida": 4,
+  "dificultad_propedéutico": 5,
+  "inicio_convocatoria_modulo": 6,
+  "modulo_info": 7,
+  "problemas_ingreso_plataforma": 8,
+  "registro_inscripcion": 9,
+  "reprobacion_baja_calificacion": 10,
+  "saludo": 11,
+  "sesiones_sincronas_puntos": 12
+}
