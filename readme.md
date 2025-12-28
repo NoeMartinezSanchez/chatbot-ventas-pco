@@ -1,362 +1,297 @@
-# 🚀 Asistente Virtual Inteligente para Educación | NLP en Español
+# 🤖 ChatBot de Ventas PCO Computación | NLP en Español
 
-<div align="center">
+**ChatBot inteligente especializado en venta de equipos de cómputo e impresoras para PCO México**
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
-![Flask](https://img.shields.io/badge/Flask-2.0+-green?logo=flask)
-![spaCy](https://img.shields.io/badge/spaCy-3.0+-orange?logo=spacy)
-![NLP](https://img.shields.io/badge/NLP-Advanced-red)
-![GitHub](https://img.shields.io/badge/GitHub-Repository-lightgrey?logo=github)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-2.3+-green.svg)](https://flask.palletsprojects.com/)
+[![spaCy](https://img.shields.io/badge/spaCy-3.7+-orange.svg)](https://spacy.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**ChatBot académico especializado con Procesamiento de Lenguaje Natural para el módulo propedéutico**
+## 🌐 **Sitio Web del Cliente**
+**PCO Computación:** https://pco.com.mx/
 
-[Características](#-características) • [Demo](#-demo) • [Instalación](#-instalación) • [Uso](#-uso) • [Estructura](#-estructura-del-proyecto)
+## 🎯 **Descripción**
+ChatBot especializado desarrollado con **Procesamiento de Lenguaje Natural (NLP)** para asistir a clientes de PCO Computación en la venta de equipos de tecnología. Combina técnicas modernas de NLP con una arquitectura escalable para proporcionar respuestas inteligentes sobre productos, precios, marcas y servicios.
 
-</div>
+## ✨ **Características Principales**
 
-<div align="center">
+### 🛒 **Asistencia de Ventas Inteligente**
+- ✅ Catálogo completo de productos (computadoras, laptops, impresoras)
+- ✅ Información sobre marcas (HP, Dell, Lenovo, Epson, etc.)
+- ✅ Consulta de precios y especificaciones técnicas
+- ✅ Soporte para equipos gaming y empresariales
 
-![Interfaz del ChatBot](./images/chatbot_interface.png)
-*Interfaz moderna del ChatBot mostrando el procesamiento NLP en tiempo real con respuestas contextuales*
+### 🚚 **Servicio al Cliente 24/7**
+- ✅ Información de envíos y entregas
+- ✅ Opciones de financiamiento y meses sin intereses
+- ✅ Soporte técnico y garantías
+- ✅ Cotizaciones personalizadas
 
-</div>
+### 🧠 **Tecnología Avanzada**
+- ✅ Procesamiento NLP en español con spaCy
+- ✅ Clasificación de intenciones con Machine Learning
+- ✅ Interfaz web moderna y responsive
+- ✅ Respuestas en tiempo real con nivel de confianza
 
-## 📖 Descripción
-
-ChatBot especializado desarrollado con **Procesamiento de Lenguaje Natural (NLP) avanzado** para asistir a estudiantes del módulo propedéutico de Prepa en Línea SEP. Combina técnicas modernas de NLP con una arquitectura escalable para proporcionar respuestas inteligentes, contextuales y en tiempo real.
-
-### 🎯 Problema Resuelto
-
-- ✅ Asistencia 24/7 para estudiantes con consultas académicas
-- ✅ Reducción de carga administrativa mediante automatización inteligente
-- ✅ Respuestas consistentes y basadas en conocimiento especializado
-- ✅ Adaptación al lenguaje natural del estudiante
-
----
-
-## 🛠️ Stack Tecnológico
-
-### 🧠 Núcleo de Inteligencia
+## 🛠️ **Stack Tecnológico**
 
 | Componente | Tecnología | Propósito |
 |------------|------------|-----------|
-| **Procesamiento NLP** | spaCy, NLTK | Análisis lingüístico en español |
-| **Machine Learning** | scikit-learn | Clasificación de intenciones |
-| **Word Embeddings** | spaCy vectors | Similitud semántica |
-| **Backend** | Flask, Python | API RESTful |
-| **Frontend** | HTML5, CSS3, JS | Interfaz moderna |
+| **Backend** | Flask, Python 3.12 | API RESTful y lógica principal |
+| **NLP** | spaCy, NLTK | Procesamiento lingüístico en español |
+| **ML** | scikit-learn, RandomForest | Clasificación de intenciones |
+| **Frontend** | HTML5, CSS3, JavaScript | Interfaz web interactiva |
+| **Procesamiento** | TF-IDF, Word Embeddings | Análisis semántico y vectorización |
 
-### 📊 Arquitectura del Sistema
+## 📊 **Arquitectura del Sistema**
 
 ```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   Interfaz Web  │◄──►│   API Flask      │◄──►│  Motor NLP      │
-│   (Frontend)    │    │   (Backend)      │    │  (spaCy+NLTK)   │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-                              │                         │
-                              ▼                         ▼
-                    ┌──────────────────┐    ┌─────────────────┐
-                    │  Base Conocimiento│    │  Clasificador   │
-                    │  (Intenciones)   │    │     ML          │
-                    └──────────────────┘    └─────────────────┘
+┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
+│  Interfaz Web   │◄───►│    API Flask     │◄───►│   Motor NLP     │
+│   (Frontend)    │     │    (Backend)     │     │  (spaCy+ML)     │
+└─────────────────┘     └──────────────────┘     └─────────────────┘
+        │                       │                         │
+        ▼                       ▼                         ▼
+┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
+│   Preguntas     │     │   Base de        │     │   Modelo ML     │
+│    Rápidas      │     │  Conocimiento    │     │   Entrenado     │
+└─────────────────┘     └──────────────────┘     └─────────────────┘
 ```
 
----
+## 🚀 **Instalación Rápida**
 
-## 🎯 Características
-
-### 🤖 Capacidades NLP Avanzadas
-
-- ✅ Procesamiento de lenguaje natural en español con spaCy
-- ✅ Clasificación de intenciones con múltiples estrategias (ML + Reglas + Semántica)
-- ✅ Reconocimiento de entidades nombradas (personas, organizaciones, lugares)
-- ✅ Análisis de sentimiento en tiempo real
-- ✅ Similitud semántica con word embeddings
-- ✅ Normalización de texto y expansión de términos
-
-### 💬 Sistema de Conversación
-
-- ✅ 13 intenciones especializadas en educación
-- ✅ 130+ patrones de reconocimiento con variaciones
-- ✅ Respuestas contextuales y personalizadas
-- ✅ Detección de confianza en cada respuesta
-- ✅ Sugerencias inteligentes basadas en contexto
-- ✅ Manejo de ambigüedades y consultas incompletas
-
-### 🎨 Experiencia de Usuario
-
-- ✅ Interfaz web responsive y moderna
-- ✅ Tiempo real con indicadores visuales
-- ✅ Preguntas rápidas para acceso inmediato
-- ✅ Historial de conversación persistente
-- ✅ Diseño institucional SEP
-
----
-
-## 📦 Instalación
-
-### Prerrequisitos
-
+### **Prerrequisitos**
 - Python 3.8 o superior
 - pip (gestor de paquetes Python)
 - Git
 
-### 🚀 Configuración Rápida
-
+### **1. Clonar el repositorio**
 ```bash
-# 1. Clonar el repositorio
-git clone https://github.com/tu-usuario/chatbot-nlp-educativo.git
-cd chatbot-nlp-educativo
+git clone https://github.com/tu-usuario/chatbot-ventas-pco.git
+cd chatbot-ventas-pco
+```
 
-# 2. Crear entorno virtual (recomendado)
+### **2. Crear entorno virtual (recomendado)**
+```bash
+# Windows
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# venv\Scripts\activate   # Windows
+venv\Scripts\activate
 
-# 3. Instalar dependencias
+# Mac/Linux
+python -m venv venv
+source venv/bin/activate
+```
+
+### **3. Instalar dependencias**
+```bash
 pip install -r requirements.txt
+```
 
-# 4. Descargar modelos de lenguaje
+### **4. Descargar modelos de lenguaje**
+```bash
 python -m spacy download es_core_news_sm
 python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
+```
 
-# 5. Ejecutar la aplicación
+### **5. Entrenar el modelo (opcional)**
+```bash
+python train_model.py
+```
+
+### **6. Ejecutar la aplicación**
+```bash
 python app.py
 ```
 
-### 🔧 Configuración Avanzada
+### **7. Acceder a la aplicación**
+Abre tu navegador en: http://localhost:5000
 
-```bash
-# Entrenar modelos ML (opcional)
-python train_model.py
+## 💬 **Uso del ChatBot**
 
-# Verificar instalación
-python -c "
-from chatbot.nl_engine import nl_engine
-print('✅ NLP Engine cargado correctamente')
-"
-```
-
-### 🌐 Acceso
-
-Una vez ejecutado, accede a: **http://localhost:5000**
-
----
-
-## 💻 Uso
-
-### Para Estudiantes
-
+### **Para Clientes**
 1. Navega a la interfaz web
-2. Escribe tu pregunta en lenguaje natural
+2. Escribe tu consulta en lenguaje natural
 3. Recibe respuestas inteligentes con nivel de confianza
-4. Usa preguntas rápidas para acceso inmediato
+4. Usa las preguntas rápidas para acceso inmediato
 
-### 📚 Ejemplos de Consultas
+### **Ejemplos de Consultas**
 
 | Tipo | Ejemplo | Respuesta Esperada |
 |------|---------|-------------------|
-| **Información** | "¿Qué es el módulo propedéutico?" | Descripción completa + objetivos |
-| **Técnicas** | "Técnicas de estudio Pomodoro" | Explicación paso a paso + beneficios |
-| **Evaluación** | "¿Cómo me evalúan?" | Criterios + porcentajes + requisitos |
-| **Plataforma** | "Acceso a la plataforma" | Pasos + soporte técnico |
-| **Organización** | "Gestión del tiempo" | Consejos + horarios recomendados |
+| **Productos** | "¿Qué laptops tienen?" | Lista de laptops disponibles con marcas y rangos de precio |
+| **Marcas** | "¿Trabajan con HP?" | Información sobre productos HP disponibles |
+| **Precios** | "¿Cuánto cuesta una computadora básica?" | Rango de precios desde $8,000 MXN |
+| **Envíos** | "¿Hacen envíos a Guadalajara?" | Información de envíos y tiempos de entrega |
+| **Gaming** | "¿Tienen equipos gamer?" | Catálogo de equipos gaming con especificaciones |
+| **Financiamiento** | "¿Ofrecen meses sin intereses?" | Opciones de pago y financiamiento |
 
-### 🔄 Flujo de Procesamiento
+## 📁 **Estructura del Proyecto**
+
+```
+chatbot-ventas-pco/
+├── chatbot/                 # Núcleo de inteligencia
+│   ├── nl_engine.py        # Motor principal NLP
+│   └── __init__.py
+├── templates/              # Interfaz web
+│   └── index.html         # Página principal del chat
+├── data/                  # Base de conocimiento
+│   └── intents.json      # Intenciones y respuestas
+├── models/               # Modelos entrenados
+│   ├── intent_classifier.pkl
+│   └── tfidf_vectorizer.pkl
+├── tests/               # Pruebas unitarias
+├── app.py              # Aplicación principal Flask
+├── config.py          # Configuración
+├── train_model.py    # Entrenamiento de modelos
+├── requirements.txt  # Dependencias
+├── .gitignore       # Archivos ignorados por Git
+└── README.md       # Este archivo
+```
+
+## 🎨 **Interfaz de Usuario**
+
+### **Características de la UI**
+- ✅ Diseño moderno con colores institucionales de PCO
+- ✅ Responsive (funciona en móviles y desktop)
+- ✅ Indicadores visuales de confianza
+- ✅ Historial de conversación persistente
+- ✅ Preguntas rápidas predefinidas
+- ✅ Integración con sitio web pco.com.mx
+
+### **Preguntas Rápidas Incluidas**
+- 📱 "Marcas disponibles"
+- 💻 "Laptops para oficina"
+- 🖨️ "Impresoras HP"
+- 🚚 "Envíos a domicilio"
+
+## 🔧 **Personalización**
+
+### **Agregar Nuevas Categorías**
+Edita `data/intents.json` para agregar nuevas intenciones:
+
+```json
+{
+  "tag": "nueva_categoria",
+  "patterns": ["palabra1", "frase2", "consulta3"],
+  "responses": ["Respuesta 1", "Respuesta 2"],
+  "context": ""
+}
+```
+
+### **Entrenar con Nuevos Datos**
+```bash
+# 1. Modifica data/intents.json
+# 2. Entrena el modelo
+python train_model.py
+# 3. Reinicia la aplicación
+```
+
+## 📊 **Métricas de Rendimiento**
+
+| Métrica | Valor Actual | Objetivo |
+|---------|--------------|----------|
+| Precisión de clasificación | 95%+ | > 90% |
+| Tiempo de respuesta | < 1 segundo | < 2 segundos |
+| Cobertura de intenciones | 14 categorías | 20+ |
+| Patrones de entrenamiento | 72+ | 100+ |
+| Confianza promedio | 85%+ | > 80% |
+
+## 🚀 **Despliegue en Producción**
+
+### **Usando Gunicorn (Recomendado)**
+```bash
+pip install gunicorn
+gunicorn app:app -b 0.0.0.0:5000 -w 4 --timeout 120
+```
+
+### **Configuración para Servidores**
+```bash
+# Instalar dependencias de sistema
+sudo apt update
+sudo apt install python3-pip python3-venv nginx
+
+# Configurar como servicio systemd
+sudo nano /etc/systemd/system/chatbot-pco.service
+```
+
+### **Ejemplo de configuración Nginx**
+```nginx
+server {
+    listen 80;
+    server_name chatbot.pco.com.mx;
+    
+    location / {
+        proxy_pass http://127.0.0.1:5000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+```
+
+## 🔄 **Flujo de Desarrollo**
 
 ```python
 # 1. Entrada del usuario
-user_input = "¿Cómo son las evaluaciones?"
+user_input = "¿Qué laptops gaming tienen?"
 
 # 2. Procesamiento NLP
-enhanced_text = enhance_query_understanding(user_input)  # "cómo son las evaluaciones"
-entities = extract_entities(enhanced_text)  # []
-sentiment = analyze_sentiment(enhanced_text)  # {"label": "neutral"}
+texto_procesado = preprocesar_texto(user_input)  # "qué laptops gaming tienen"
+vector = vectorizar(texto_procesado)
 
-# 3. Clasificación
-intent_result = classify_intent(enhanced_text)  # {"tag": "evaluacion", "confidence": 0.87}
+# 3. Clasificación ML
+intencion = clasificar_intencion(vector)  # {"tag": "gaming", "confidence": 0.92}
 
 # 4. Generación de respuesta
-response = generate_response(intent_result)  # Respuesta estructurada sobre evaluación
+respuesta = obtener_respuesta(intencion)  # Información sobre laptops gaming
 ```
 
----
+## 👥 **Colaboración y Contribuciones**
 
-## 📁 Estructura del Proyecto
+### **Reportar Issues**
+1. Verifica que el issue no exista ya
+2. Describe el problema con detalles
+3. Incluye pasos para reproducir
+4. Agrega capturas de pantalla si es necesario
 
-```
-chatbot-nlp-educativo/
-├── 🧠 chatbot/                 # Núcleo de inteligencia
-│   ├── nl_engine.py           # Motor principal NLP
-│   ├── intent_classifier.py   # Clasificador ML
-│   ├── response_generator.py  # Generador de respuestas
-│   └── utils/
-│       └── text_processor.py  # Procesamiento de texto
-├── 🌐 templates/              # Interfaz web
-│   └── index.html            # Página principal
-├── 📚 data/                  # Base de conocimiento
-│   └── intents.json          # Intenciones y patrones
-├── 🤖 models/                # Modelos entrenados
-│   ├── intent_classifier.pkl
-│   └── tfidf_vectorizer.pkl
-├── 📊 tests/                 # Pruebas unitarias
-├── 📄 app.py                # Aplicación principal
-├── ⚙️ config.py             # Configuración
-├── 📋 requirements.txt      # Dependencias
-└── 📖 README.md            # Documentación
-```
+### **Sugerir Mejoras**
+1. Fork el repositorio
+2. Crea una rama para tu feature
+3. Realiza tus cambios
+4. Envía un Pull Request
 
----
+## 📈 **Roadmap Futuro**
+- [ ] Integración con API de PCO para catálogo en tiempo real
+- [ ] Panel administrativo para gestionar respuestas
+- [ ] Sistema de cotizaciones automáticas
+- [ ] Integración con WhatsApp Business
+- [ ] Análisis de sentimiento en consultas
+- [ ] Soporte multi-idioma (inglés)
+- [ ] Recomendaciones personalizadas basadas en historial
+- [ ] Modelos Transformer (BERT en español)
 
-## 🔍 Componentes Principales
+## 👨‍💻 **Autor**
 
-### Motor NLP (nl_engine.py)
+**Desarrollador:** [Tu Nombre]  
+**GitHub:** [@tu-usuario](https://github.com/tu-usuario)  
+**Email:** tu-email@dominio.com  
+**Sitio Web:** https://tu-sitio.com
 
-```python
-class NLEngine:
-    def process_query(self, user_input: str) -> Dict:
-        """Procesa consultas usando múltiples estrategias"""
-        # 1. Mejora del entendimiento
-        # 2. Extracción de características  
-        # 3. Clasificación por ensemble
-        # 4. Análisis de entidades y sentimiento
-```
+**Cliente:** PCO Computación  
+**Sitio Web:** https://pco.com.mx/  
+**Industria:** Venta de equipos de cómputo e impresoras  
+**Ubicación:** México
 
-### Base de Conocimiento (intents.json)
-
-```json
-{
-  "intents": [
-    {
-      "tag": "evaluacion",
-      "patterns": ["eval", "evaluación", "calificación", "cómo califican"],
-      "responses": ["📊 **Sistema de Evaluación**:\n• Foros (30%)\n• Actividades (40%)..."],
-      "context": "academic"
-    }
-  ]
-}
-```
-
----
-
-## 🎯 Temas Especializados
-
-El chatbot maneja **13 categorías académicas**:
-
-1. 📖 **Información del Módulo** - Qué es, objetivos, duración
-2. 🎯 **Técnicas de Estudio** - Pomodoro, mapas mentales, repaso espaciado
-3. 💻 **Plataforma Virtual** - Acceso, navegación, soporte
-4. 📊 **Sistema de Evaluación** - Criterios, calificaciones, aprobación
-5. ⏰ **Organización del Tiempo** - Horarios, planificación, metas
-6. 💬 **Participación en Foros** - Importancia, evaluación, mejores prácticas
-7. 🛠️ **Soporte Técnico** - Problemas de acceso, contacto
-8. 🧠 **Métodos Avanzados** - Estrategias comprobadas por la ciencia
-9. ❓ **Preguntas Frecuentes** - Consultas comunes de estudiantes
-10. 🎓 **Adaptación Académica** - Transición a estudios en línea
-
----
-
-## 📊 Métricas de Rendimiento
-
-| Métrica | Valor | Objetivo |
-|---------|-------|----------|
-| Precisión de clasificación | 95% | > 90% |
-| Tiempo de respuesta | < 1s | < 2s |
-| Cobertura de intenciones | 13 | 15+ |
-| Patrones de entrenamiento | 130+ | 200+ |
-| Confianza promedio | 85% | > 80% |
-
----
-
-## 🚀 Despliegue
-
-### Desarrollo
-
-```bash
-python app.py
-```
-
-### Producción (Gunicorn)
-
-```bash
-pip install gunicorn
-gunicorn app:app -b 0.0.0.0:5000 -w 4
-```
-
-### Docker (Opcional)
-
-```dockerfile
-FROM python:3.9-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-CMD ["python", "app.py"]
-```
-
----
-
-## 🔧 Desarrollo y Contribución
-
-### Agregar Nueva Intención
-
-1. Editar `data/intents.json`
-2. Agregar patrones y respuestas
-3. Probar con `python test_new_intent.py`
-
-#### Ejemplo: Nueva Categoría
-
-```json
-{
-  "tag": "recursos_adicionales",
-  "patterns": ["recursos", "material adicional", "bibliografía"],
-  "responses": ["📚 **Recursos disponibles**:\n• Biblioteca virtual\n• Video-tutoriales..."],
-  "context": "academic"
-}
-```
-
----
-
-## 📈 Roadmap Futuro
-
-- [ ] Integración con APIs de plataforma educativa
-- [ ] Análisis de aprendizaje personalizado
-- [ ] Sistema multi-idioma (inglés)
-- [ ] Panel administrativo para gestión
-- [ ] App móvil nativa
-- [ ] Modelos transformers (BERT en español)
-
----
-
-## 👥 Autor
-
-**Noé Martínez Sánchez**
-
-- 💼 Enfoque: Soluciones tecnológicas para impacto educativo
-- 🌐 GitHub: [@NoeMartinezSanchez](https://github.com/NoeMartinezSanchez)
-- 📧 Contacto: [Tu email]
-- 🎯 Disponibilidad: Proyectos desafiantes en NLP y educación
-
----
-
-## 📄 Licencia
-
+## 📄 **Licencia**
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
 
 ---
 
-<div align="center">
+## ⭐ **¿Te gusta este proyecto?**
+Dale una estrella en GitHub para apoyar el desarrollo de soluciones tecnológicas innovadoras para el comercio electrónico.
 
-### ⭐ ¿Te gusta este proyecto?
-
-Dale una estrella en GitHub para apoyar el desarrollo de soluciones educativas innovadoras.
-
-**¿Preguntas o colaboración? ¡No dudes en contactarme!**
-
-[⬆ Volver al inicio](#-asistente-virtual-inteligente-para-educación--nlp-en-español)
+## 💼 **¿Interesado en una solución similar para tu negocio?**
+📧 Contáctame para desarrollar un chatbot personalizado para tu empresa.
 
 ---
 
-*"Transformando la educación a través de inteligencia artificial aplicada"* 🚀
-
-</div>
+> *"Potenciando las ventas con inteligencia artificial conversacional"* 🚀

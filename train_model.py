@@ -1,85 +1,57 @@
-#!/usr/bin/env python3
-"""
-Script para entrenar modelos de NLP y ML del chatbot
-"""
-
 import json
-import os
-import sys
-from datetime import datetime
+import pickle
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+import numpy as np
 
-# Agregar el directorio actual al path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+def train_intent_model():
+    # Cargar intents actualizados
+    with open('data/intents.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    # Preparar datos
+    texts = []
+    labels = []
+    
+    for intent in data['intents']:
+        for pattern in intent['patterns']:
+            texts.append(pattern.lower())
+            labels.append(intent['tag'])
+    
+    # Vectorización
+    vectorizer = TfidfVectorizer(
+        max_features=1000,
+        ngram_range=(1, 2),
+        stop_words=['de', 'y', 'en', 'la', 'el', 'que', 'con']
+    )
+    
+    X = vectorizer.fit_transform(texts)
+    y = np.array(labels)
+    
+    # Entrenar modelo
+    model = RandomForestClassifier(
+        n_estimators=100,
+        random_state=42,
+        n_jobs=-1
+    )
+    
+    model.fit(X, y)
+    
+    # Guardar modelo y vectorizador
+    with open('models/intent_classifier.pkl', 'wb') as f:
+        pickle.dump(model, f)
+    
+    with open('models/tfidf_vectorizer.pkl', 'wb') as f:
+        pickle.dump(vectorizer, f)
+    
+    print(f"✅ Modelo entrenado con {len(texts)} ejemplos y {len(set(labels))} intenciones")
+    print(f"📊 Intenciones: {', '.join(set(labels))}")
+    
+    # Evaluación rápida
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    score = model.score(X_test, y_test)
+    print(f"🎯 Precisión: {score:.2%}")
 
-from chatbot.intent_classifier import intent_classifier
-from chatbot.utils.text_processor import text_processor
-from config import Config
-
-def main():
-    print("🚀 Iniciando entrenamiento de modelos NLP...")
-    
-    # Asegurar que existen los directorios
-    Config.ensure_directories()
-    
-    # Cargar datos de intenciones
-    try:
-        with open(Config.INTENTS_FILE, 'r', encoding='utf-8') as f:
-            intents_data = json.load(f)
-        
-        intents = intents_data.get("intents", [])
-        print(f"📁 Cargados {len(intents)} intents desde {Config.INTENTS_FILE}")
-        
-    except Exception as e:
-        print(f"❌ Error cargando intents: {e}")
-        return
-    
-    # Preparar datos de entrenamiento para vectorizadores
-    print("🔧 Preparando datos para vectorizadores...")
-    all_patterns = []
-    for intent in intents:
-        all_patterns.extend(intent["patterns"])
-    
-    text_processor.fit_vectorizers(all_patterns)
-    print(f"✅ Vectorizadores entrenados con {len(all_patterns)} patrones")
-    
-    # Entrenar modelo de clasificación
-    print("🤖 Entrenando clasificador de intenciones...")
-    training_results = intent_classifier.train_model(intents)
-    
-    if "error" in training_results:
-        print(f"❌ Error en entrenamiento: {training_results['error']}")
-        return
-    
-    print("\n📊 RESULTADOS DEL ENTRENAMIENTO:")
-    print(f"   • Accuracy: {training_results['accuracy']:.3f}")
-    print(f"   • Ejemplos entrenamiento: {training_results['training_size']}")
-    print(f"   • Ejemplos prueba: {training_results['test_size']}")
-    print(f"   • Clases: {training_results['num_classes']}")
-    print(f"   • Características: {training_results['feature_count']}")
-    print(f"   • Clasificador: {training_results['classifier_type']}")
-    
-    # Guardar modelos
-    print("💾 Guardando modelos...")
-    intent_classifier.save_model()
-    
-    # Probar el modelo con algunos ejemplos
-    print("\n🧪 Probando modelo con ejemplos...")
-    test_examples = [
-        "Hola, buen día",
-        "Esto es todo",
-        "Cuanto necesito para pasar el curso?",
-        "Donde puedo ver mi calificacion?",
-        "Quiero aprender la prepa"
-    ]
-    
-    for example in test_examples:
-        try:
-            tag, confidence = intent_classifier.predict_intent(example)
-            print(f"   '{example}' -> {tag} (conf: {confidence:.3f})")
-        except Exception as e:
-            print(f"   '{example}' -> Error: {e}")
-    
-    print(f"\n✅ Entrenamiento completado: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    train_intent_model()

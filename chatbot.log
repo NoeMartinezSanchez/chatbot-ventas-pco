@@ -3325,3 +3325,16 @@
 2025-12-05 11:39:11,420 - ResponseGenerator - INFO - Respuesta generada - Intent: registro_inscripcion, Conf: 0.400, Método: enhanced_semantic
 2025-12-05 11:39:11,438 - app - INFO - Chat - User: 'quiero empezar la prepa' -> Intent: registro_inscripcion (Conf: 0.400)
 2025-12-05 11:39:11,439 - werkzeug - INFO - 10.11.11.7 - - [05/Dec/2025 11:39:11] "POST /chat HTTP/1.1" 200 -
+2025-12-27 21:59:59,200 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.11.11.2:5000
+2025-12-27 21:59:59,200 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-27 21:59:59,455 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-12-27 22:00:14,556 - werkzeug - WARNING -  * Debugger is active!
+2025-12-27 22:00:14,578 - werkzeug - INFO -  * Debugger PIN: 275-692-879
+2025-12-27 22:00:15,344 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 22:00:15] "GET / HTTP/1.1" 200 -
+2025-12-27 22:00:16,141 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 22:00:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-27 22:00:21,384 - ResponseGenerator - INFO - Respuesta generada - Intent: saludo, Conf: 1.100, Método: enhanced_semantic
+2025-12-27 22:00:21,393 - app - INFO - Chat - User: 'hola' -> Intent: saludo (Conf: 1.100)
+2025-12-27 22:00:21,393 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 22:00:21] "POST /chat HTTP/1.1" 200 -
